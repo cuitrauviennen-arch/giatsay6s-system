@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { getContactData } from "@/lib/api";
+import { getContactData, getStrapiMedia } from "@/lib/api";
 
 export default async function Header() {
   const contactData = await getContactData();
-  const logoUrl = contactData?.logo?.url ? `http://127.0.0.1:1338${contactData.logo.url}` : null;
+  const logoUrl = getStrapiMedia(contactData?.logo?.url);
 
   return (
     <header className="sticky w-full top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">

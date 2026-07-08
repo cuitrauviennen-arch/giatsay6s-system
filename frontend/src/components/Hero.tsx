@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getStrapiMedia } from "@/lib/api";
 
 interface HeroProps {
   data?: {
@@ -25,7 +26,8 @@ export default function Hero({ data }: HeroProps) {
   
   const title = data?.title || "Dịch vụ giặt sấy lấy ngay quận Gò Vấp";
   const subTitle = data?.subTitle || "với các tiện ích - ";
-  const bgImageUrl = data?.backgroundImage?.url ? `http://127.0.0.1:1338${data.backgroundImage.url}` : "https://giatsay6s.com/wp-content/uploads/2021/07/giat-xep.jpg";
+  
+  const bgImageUrl = getStrapiMedia(data?.backgroundImage?.url || null) || "https://giatsay6s.com/wp-content/uploads/2021/07/giat-xep.jpg";
 
   const [currentWord, setCurrentWord] = useState(0);
 
