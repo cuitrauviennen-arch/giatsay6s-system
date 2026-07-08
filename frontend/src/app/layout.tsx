@@ -4,6 +4,7 @@ import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingNav from "@/components/FloatingNav";
+import { getContactData, getStrapiMedia } from "@/lib/api";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -17,11 +18,14 @@ export const metadata: Metadata = {
   description: "Giặt sấy lấy liền quận Gò Vấp - Sử dụng nước giặt xả cao cấp - Liên hệ 0907452299 hoặc 0816366176 ngay nhé!",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const contactData = await getContactData();
+  const logoUrl = getStrapiMedia(contactData?.logo?.url);
+
   return (
     <html lang="vi" className="scroll-smooth">
       <body
@@ -31,7 +35,7 @@ export default function RootLayout({
         <Header />
         <FloatingNav />
         <main>{children}</main>
-        <Footer />
+        <Footer logoUrl={logoUrl} />
       </body>
     </html>
   );

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Phone, MapPin, Clock } from "lucide-react";
 
-export default function Footer() {
+export default function Footer({ logoUrl }: { logoUrl?: string | null }) {
   return (
     <footer className="w-full" style={{ background: "#1a3a6b" }}>
       {/* Yellow top border */}
@@ -22,10 +22,13 @@ export default function Footer() {
         >
           <div className="flex flex-col items-center gap-2">
             <div
-              className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg overflow-hidden"
+              className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg overflow-hidden p-2"
             >
-              {/* Washing machine mascot using emoji/text fallback */}
-              <span className="text-5xl">🫧</span>
+              {logoUrl ? (
+                <img src={logoUrl} alt="Giặt Sấy 6S Logo" className="w-full h-full object-contain" />
+              ) : (
+                <span className="text-5xl">🫧</span>
+              )}
             </div>
             <div>
               <p className="text-white font-extrabold text-xl tracking-wide">
