@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Cấu hình chung (Logo, Liên hệ)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "hotline": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "facebookUrl": {
+      "type": "string"
+    },
+    "mapEmbedUrl": {
+      "type": "text"
+    },
+    "mapLink": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

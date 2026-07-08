@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "process_steps",
+  "info": {
+    "singularName": "process-step",
+    "pluralName": "process-steps",
+    "displayName": "Process Step",
+    "description": "Quản lý các bước trong Quy trình giặt sấy"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "lottieUrl": {
+      "type": "string",
+      "required": true,
+      "description": "Tên file lottie (vd: lf20_t2v92u3m.json)"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    }
+  }
+}
