@@ -144,37 +144,46 @@ export default function Footer({ logoUrl }: { logoUrl?: string | null }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mx-4 md:mx-12 lg:mx-24 xl:mx-40 rounded-2xl mb-10 flex flex-col sm:flex-row items-center justify-between gap-4 px-8 py-6"
-        style={{ background: "#1e5bbf" }}
+        className="mx-4 md:mx-12 lg:mx-24 xl:mx-40 rounded-2xl mb-10 px-8 py-10 text-center"
+        style={{ background: "linear-gradient(135deg, #1e5bbf 0%, #2a6fd6 100%)" }}
       >
-        <div className="text-left">
-          <p className="text-sm font-light tracking-wider" style={{ color: "#cde0ff" }}>
-            Nếu Bạn Cần Chúng Tôi
-          </p>
-          <p className="text-2xl md:text-3xl font-black uppercase tracking-wider text-white mt-1">
-            Hãy liên hệ ngay nhé
-          </p>
-        </div>
+        <p className="text-sm font-light tracking-[0.25em] uppercase mb-2" style={{ color: "#a8c8f0" }}>
+          Nếu Bạn Cần Chúng Tôi
+        </p>
+        <p className="text-2xl md:text-3xl font-black uppercase tracking-wider text-white mb-6">
+          Hãy liên hệ ngay nhé
+        </p>
 
-        <a
-          href="https://m.me/107621841054546?ref=WelcomeMessage"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 rounded-full px-6 py-3 font-bold text-sm shadow-lg hover:opacity-90 transition-opacity whitespace-nowrap"
-          style={{ background: "#f5c518", color: "#1a3a6b" }}
-        >
-          {/* Messenger icon */}
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.929 1.463 5.547 3.75 7.258V22l3.42-1.88c.914.254 1.882.39 2.883.39 5.522 0 9.947-4.145 9.947-9.267C22 6.145 17.523 2 12 2zm1.03 12.473l-2.53-2.706-4.942 2.706 5.44-5.775 2.59 2.706 4.882-2.706-5.44 5.775z"/>
-          </svg>
-          Messenger
-        </a>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://m.me/107621841054546?ref=WelcomeMessage"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-full px-8 py-3 font-bold text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all whitespace-nowrap"
+            style={{ background: "#f5c518", color: "#1a3a6b" }}
+          >
+            {/* Messenger icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.929 1.463 5.547 3.75 7.258V22l3.42-1.88c.914.254 1.882.39 2.883.39 5.522 0 9.947-4.145 9.947-9.267C22 6.145 17.523 2 12 2zm1.03 12.473l-2.53-2.706-4.942 2.706 5.44-5.775 2.59 2.706 4.882-2.706-5.44 5.775z"/>
+            </svg>
+            Nhắn Messenger
+          </a>
+
+          <a
+            href="tel:0907452299"
+            className="flex items-center gap-2 rounded-full px-8 py-3 font-bold text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all whitespace-nowrap border-2"
+            style={{ borderColor: "#f5c518", color: "#f5c518", background: "transparent" }}
+          >
+            <Phone size={18} />
+            Gọi 0907.45.22.99
+          </a>
+        </div>
       </motion.div>
 
       {/* Copyright */}
       <div className="text-center pb-8">
         <p className="text-xs" style={{ color: "#7a99bb" }}>
-          © {new Date().getFullYear()} All Rights Reserved
+          © {new Date().getFullYear()} Giặt Sấy 6S. All Rights Reserved
         </p>
       </div>
     </footer>
