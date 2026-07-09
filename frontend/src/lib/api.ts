@@ -56,3 +56,8 @@ export async function getProcessStepsData() {
   const res = await fetchAPI("/process-steps", { populate: "*", sort: "order:asc" }, { cache: "no-store" });
   return res?.data || [];
 }
+
+export async function getSeoData() {
+  const res = await fetchAPI("/seo", { populate: "*" }, { cache: "no-store" });
+  return res?.data || null;
+}

@@ -1,0 +1,59 @@
+{
+  "kind": "singleType",
+  "collectionName": "seos",
+  "info": {
+    "singularName": "seo",
+    "pluralName": "seos",
+    "displayName": "SEO & Metadata"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "metaTitle": {
+      "type": "string",
+      "required": true,
+      "maxLength": 70,
+      "description": "Tiêu đề trang hiển thị trên Google (tối đa 70 ký tự)"
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": true,
+      "maxLength": 160,
+      "description": "Mô tả trang hiển thị trên Google (tối đa 160 ký tự)"
+    },
+    "metaKeywords": {
+      "type": "text",
+      "description": "Từ khóa SEO, ngăn cách bằng dấu phẩy (VD: giặt sấy gò vấp, giặt ủi quận gò vấp)"
+    },
+    "ogTitle": {
+      "type": "string",
+      "maxLength": 70,
+      "description": "Tiêu đề khi chia sẻ lên Facebook/Zalo (để trống sẽ dùng metaTitle)"
+    },
+    "ogDescription": {
+      "type": "text",
+      "maxLength": 200,
+      "description": "Mô tả khi chia sẻ lên Facebook/Zalo (để trống sẽ dùng metaDescription)"
+    },
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "description": "Ảnh hiển thị khi chia sẻ link lên Facebook/Zalo (1200x630px tối ưu)"
+    },
+    "canonicalUrl": {
+      "type": "string",
+      "description": "URL chính thức của trang (VD: https://giatsay6s.com)"
+    },
+    "googleVerification": {
+      "type": "string",
+      "description": "Google Search Console verification code"
+    },
+    "structuredData": {
+      "type": "json",
+      "description": "JSON-LD Schema (Structured Data) cho Google Rich Results"
+    }
+  }
+}
