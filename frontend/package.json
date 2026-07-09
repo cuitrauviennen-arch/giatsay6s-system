@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.10",
     "framer-motion": "^12.42.0",
     "lottie-react": "^2.4.1",
     "lucide-react": "^1.22.0",

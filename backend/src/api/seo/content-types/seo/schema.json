@@ -54,6 +54,10 @@
     "structuredData": {
       "type": "json",
       "description": "JSON-LD Schema (Structured Data) cho Google Rich Results"
+    },
+    "googleTagManagerId": {
+      "type": "string",
+      "description": "Google Tag Manager ID (VD: GTM-XXXXXXX)"
     }
   }
 }

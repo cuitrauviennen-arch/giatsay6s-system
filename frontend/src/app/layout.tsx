@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingNav from "@/components/FloatingNav";
 import { getContactData, getSeoData, getStrapiMedia } from "@/lib/api";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -94,6 +95,9 @@ export default async function RootLayout({
       <body
         className={`${roboto.variable} antialiased font-sans relative bg-gray-50`}
       >
+        {seoData?.googleTagManagerId && (
+          <GoogleTagManager gtmId={seoData.googleTagManagerId} />
+        )}
         <TopBar />
         <Header />
         <FloatingNav />
