@@ -21,7 +21,12 @@ const DEFAULT_SEO = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seoData = await getSeoData();
+  const [seoData, contactData] = await Promise.all([
+    getSeoData(),
+    getContactData(),
+  ]);
+
+  const logoUrl = getStrapiMedia(contactData?.logo?.url);
 
   const title = seoData?.metaTitle || DEFAULT_SEO.title;
   const description = seoData?.metaDescription || DEFAULT_SEO.description;
@@ -65,6 +70,13 @@ export async function generateMetadata(): Promise<Metadata> {
       follow: true,
       googleBot: { index: true, follow: true },
     },
+    ...(logoUrl && {
+      icons: {
+        icon: logoUrl,
+        shortcut: logoUrl,
+        apple: logoUrl,
+      },
+    }),
   };
 }
 
