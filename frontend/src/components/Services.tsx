@@ -74,7 +74,7 @@ export default function Services({ data }: { data?: ProcessStep[] }) {
 
   return (
     <section
-      id="services"
+      id="process"
       className="py-20 relative overflow-hidden"
       style={{
         backgroundImage: `url('/images/process-bg.jpg')`,

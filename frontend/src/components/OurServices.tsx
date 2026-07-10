@@ -38,7 +38,7 @@ export default function OurServices({ data }: { data?: any[] }) {
 
   return (
     <section
-      id="our-services"
+      id="services"
       className="py-20"
       style={{
         background: "linear-gradient(180deg, #dce3ec 0%, #e8edf3 100%)",
