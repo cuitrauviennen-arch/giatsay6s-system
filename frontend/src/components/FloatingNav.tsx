@@ -7,10 +7,10 @@ export default function FloatingNav() {
   const [activeSection, setActiveSection] = useState("hero");
 
   const navItems = [
-    { id: "hero", label: "Trang chủ", icon: <Home size={20} /> },
-    { id: "process", label: "Quy trình", icon: <Settings size={20} /> },
-    { id: "services", label: "Dịch vụ", icon: <Leaf size={20} /> },
-    { id: "contact", label: "Liên hệ", icon: <MapPin size={20} /> },
+    { id: "hero", label: "Trang chủ", icon: <Home size={18} /> },
+    { id: "process", label: "Quy trình", icon: <Settings size={18} /> },
+    { id: "services", label: "Dịch vụ", icon: <Leaf size={18} /> },
+    { id: "contact", label: "Liên hệ", icon: <MapPin size={18} /> },
   ];
 
   useEffect(() => {
@@ -53,9 +53,7 @@ export default function FloatingNav() {
             }`}
             aria-label={item.label}
           >
-            <span className="[&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-5 sm:[&>svg]:h-5">
-              {item.icon}
-            </span>
+            {item.icon}
           </button>
           
           {/* Tooltip - hidden on mobile */}

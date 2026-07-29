@@ -42,7 +42,12 @@
   }
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #f3f4f6; /* Gray 100 for subtle background */
   color: #1f2937; /* Gray 800 */
+  overflow-x: hidden;
 }
