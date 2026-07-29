@@ -45,11 +45,11 @@ export default function ContactBar({ data }: { data?: ContactData }) {
         <div className="hidden lg:block w-[50px] lg:w-[150px] xl:w-[250px] bg-[#004b9b]" />
 
         {/* Yellow Content Area */}
-        <div className="flex-1 bg-[#ffda44] flex flex-col md:flex-row items-center justify-evenly gap-8 py-8 lg:py-0 px-4 lg:px-8 z-10 lg:shadow-[-15px_0_20px_-15px_rgba(0,0,0,0.15)]">
+        <div className="flex-1 bg-[#ffda44] flex flex-col md:flex-row items-stretch md:items-center justify-evenly gap-4 sm:gap-6 md:gap-8 py-6 sm:py-8 lg:py-0 px-6 sm:px-8 lg:px-8 z-10 lg:shadow-[-15px_0_20px_-15px_rgba(0,0,0,0.15)]">
           {items.map((item, i) => (
             <div
               key={i}
-              className="flex items-center gap-4 group cursor-pointer w-full md:w-auto justify-center"
+              className="flex items-center gap-3 sm:gap-4 group cursor-pointer md:justify-center"
             >
               {/* Rotated Vertical Label */}
               <div className="hidden lg:flex items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity duration-300">
@@ -63,17 +63,17 @@ export default function ContactBar({ data }: { data?: ContactData }) {
 
               {/* Icon with elegant styling */}
               <div className="text-[#004b9b] flex-shrink-0 transition-transform duration-300 group-hover:-translate-y-2">
-                <div className="w-12 h-12 rounded-full border-2 border-[#004b9b]/20 flex items-center justify-center group-hover:border-[#004b9b] group-hover:bg-[#004b9b] group-hover:text-[#ffda44] transition-all duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#004b9b]/20 flex items-center justify-center group-hover:border-[#004b9b] group-hover:bg-[#004b9b] group-hover:text-[#ffda44] transition-all duration-300">
                   {item.icon}
                 </div>
               </div>
 
               {/* Text Info */}
-              <div className="flex flex-col">
-                <span className="text-[#004b9b]/70 font-bold text-[11px] uppercase tracking-wider mb-0.5">
+              <div className="flex flex-col min-w-0">
+                <span className="text-[#004b9b]/70 font-bold text-[10px] sm:text-[11px] uppercase tracking-wider mb-0.5">
                   {item.title}
                 </span>
-                <span className="text-[#004b9b] font-bold text-sm lg:text-base whitespace-nowrap">
+                <span className="text-[#004b9b] font-bold text-sm lg:text-base break-words">
                   {item.text}
                 </span>
               </div>
