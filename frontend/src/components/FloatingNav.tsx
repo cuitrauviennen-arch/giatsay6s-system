@@ -41,23 +41,25 @@ export default function FloatingNav() {
   };
 
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
+    <div className="fixed right-2 sm:right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 sm:gap-3">
       {navItems.map((item) => (
         <div key={item.id} className="relative group">
           <button
             onClick={() => scrollTo(item.id)}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
+            className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
               activeSection === item.id
                 ? "bg-primary text-white scale-110"
                 : "bg-white text-gray-500 hover:bg-gray-100 hover:text-primary"
             }`}
             aria-label={item.label}
           >
-            {item.icon}
+            <span className="[&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-5 sm:[&>svg]:h-5">
+              {item.icon}
+            </span>
           </button>
           
-          {/* Tooltip */}
-          <div className="absolute right-full top-1/2 -translate-y-1/2 mr-4 px-3 py-1.5 bg-gray-900 text-white text-sm font-medium rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+          {/* Tooltip - hidden on mobile */}
+          <div className="absolute right-full top-1/2 -translate-y-1/2 mr-4 px-3 py-1.5 bg-gray-900 text-white text-sm font-medium rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap hidden sm:block">
             {item.label}
             {/* Arrow pointing right */}
             <div className="absolute top-1/2 -right-1 -translate-y-1/2 border-4 border-transparent border-l-gray-900"></div>
