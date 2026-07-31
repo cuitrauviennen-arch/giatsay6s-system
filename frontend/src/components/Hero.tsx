@@ -64,7 +64,7 @@ export default function Hero({ data }: HeroProps) {
               {title}
             </span>
             <span className="text-3xl md:text-5xl text-gray-700">{subTitle}</span>
-            <span className="inline-block overflow-hidden h-[1.5em] align-bottom relative min-w-[200px] md:min-w-[280px]">
+            <span className="inline-block overflow-y-hidden overflow-x-visible h-[1.5em] align-bottom relative min-w-[200px] md:min-w-[280px]">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentWord}
