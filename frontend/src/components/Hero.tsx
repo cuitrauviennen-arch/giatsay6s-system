@@ -63,21 +63,23 @@ export default function Hero({ data }: HeroProps) {
             <span className="block text-primary drop-shadow-sm mb-4">
               {title}
             </span>
-            <span className="text-3xl md:text-5xl text-gray-700">{subTitle}</span>
-            <span className="inline-block overflow-hidden h-[1.5em] align-bottom relative min-w-[200px] md:min-w-[280px]">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={currentWord}
-                  initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -50, opacity: 0 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="text-secondary block whitespace-nowrap drop-shadow-md py-[0.05em] pr-1"
-                  style={{ WebkitTextStroke: "1px #b39a00" }}
-                >
-                  {animatedWords[currentWord]}
-                </motion.span>
-              </AnimatePresence>
+            <span className="flex flex-wrap items-end justify-center gap-x-2">
+              <span className="text-3xl md:text-5xl text-gray-700">{subTitle}</span>
+              <span className="inline-block overflow-hidden h-[1.5em] relative min-w-[200px] md:min-w-[280px]">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentWord}
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -50, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="text-secondary block whitespace-nowrap drop-shadow-md py-[0.05em] pr-1"
+                    style={{ WebkitTextStroke: "1px #b39a00" }}
+                  >
+                    {animatedWords[currentWord]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </span>
           </h1>
 
