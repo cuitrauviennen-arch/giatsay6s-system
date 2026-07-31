@@ -63,9 +63,9 @@ export default function Hero({ data }: HeroProps) {
             <span className="block text-primary drop-shadow-sm mb-4">
               {title}
             </span>
-            <span className="flex flex-wrap items-end justify-center gap-x-2">
-              <span className="text-3xl md:text-5xl text-gray-700">{subTitle}</span>
-              <span className="inline-block overflow-hidden h-[1.5em] relative min-w-[200px] md:min-w-[280px]">
+            <span className="flex flex-wrap items-center justify-center gap-x-2 md:gap-x-3 mt-1">
+              <span className="text-3xl md:text-5xl text-gray-700 pb-1">{subTitle}</span>
+              <span className="inline-flex items-center justify-start overflow-hidden h-[1.3em] md:h-[1.4em] min-w-[200px] md:min-w-[280px]">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentWord}
@@ -73,7 +73,7 @@ export default function Hero({ data }: HeroProps) {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -50, opacity: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-secondary block whitespace-nowrap drop-shadow-md py-[0.05em] pr-1"
+                    className="text-secondary whitespace-nowrap drop-shadow-md pb-1 md:pb-2 leading-tight"
                     style={{ WebkitTextStroke: "1px #b39a00" }}
                   >
                     {animatedWords[currentWord]}
