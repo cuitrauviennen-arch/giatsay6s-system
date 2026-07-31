@@ -64,16 +64,16 @@ export default function Hero({ data }: HeroProps) {
               {title}
             </span>
             <span className="text-3xl md:text-5xl text-gray-700">{subTitle}</span>
-            <span className="inline-block overflow-hidden h-[1.2em] align-bottom relative min-w-[200px] md:min-w-[280px]">
-              <AnimatePresence>
+            <span className="inline-block overflow-hidden h-[1.5em] align-bottom relative min-w-[200px] md:min-w-[280px]">
+              <AnimatePresence mode="wait">
                 <motion.span
                   key={currentWord}
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -50, opacity: 0 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="text-secondary absolute top-0 left-0 whitespace-nowrap drop-shadow-md"
-                  style={{ WebkitTextStroke: "1px #b39a00" }} // Thêm viền nhẹ để text vàng nổi bật trên nền sáng
+                  className="text-secondary block whitespace-nowrap drop-shadow-md py-[0.05em]"
+                  style={{ WebkitTextStroke: "1px #b39a00" }}
                 >
                   {animatedWords[currentWord]}
                 </motion.span>
