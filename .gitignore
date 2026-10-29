@@ -6,3 +6,6 @@ dist
 .tmp
 .cache
 .DS_Store
+
+# Handoff package from the designer, kept outside git
+giatsay6s-handoff/
