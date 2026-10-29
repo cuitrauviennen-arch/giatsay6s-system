@@ -40,5 +40,8 @@
   "strapi": {
     "uuid": "3e2aef78-a489-478d-a5e5-d435f521d8bd",
     "installId": "3d833461752f4bb34818e789be700d6f60e56f0f6db967c4e0a7cd7c588b1f5e"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.8.0": true
   }
 }
