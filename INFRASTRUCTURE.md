@@ -176,6 +176,6 @@ Lịch sử sao lưu:
   - Chạy `git config core.fileMode false` trong repo để git bỏ qua việc đổi quyền file.
   - Nếu lệnh build báo lỗi kiểu `Cannot find module ...` trong `node_modules`: xoá `node_modules` rồi chạy lại `npm ci`.
 - **npm 11 chặn script cài đặt** của thư viện. `better-sqlite3` đã được cho phép trong `backend/package.json` (`allowScripts`). Thư viện mới cần script thì chạy `npm install-scripts approve <tên>`.
-- **`npm run lint` ở frontend đang lỗi** vì Next.js 16 đã bỏ lệnh `next lint`. Cần đổi script sang `eslint`.
+- **`npm run lint` ở frontend** chạy `eslint` (Next.js 16 đã bỏ lệnh `next lint`). Hiện 0 lỗi, còn 5 cảnh báo: dùng `<img>` thay vì `next/image`, và dependency của `useEffect` trong `FloatingNav`, `Hero`.
 - **npm audit**: frontend 0 lỗ hổng. Backend còn khoảng 35 lỗ hổng (không có mức critical), nằm trong thư viện nội bộ của Strapi; chờ Strapi phát hành bản vá rồi nâng tiếp (`npx @strapi/upgrade minor`).
 - **Neon Free** không hết hạn. **Render Free** không dùng database của Render (Postgres miễn phí của Render tự xoá sau ~30 ngày) — database nằm ở Neon.

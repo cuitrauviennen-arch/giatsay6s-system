@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 interface ServiceCard {
   title: string;
   description: string;
-  image: string;
+  // Local fallback cards use a path; Strapi services return a media object.
+  image: string | { url: string };
   badge?: string;
 }
 
@@ -33,7 +34,7 @@ const OUR_SERVICES: ServiceCard[] = [
 
 import { getStrapiMedia } from "@/lib/api";
 
-export default function OurServices({ data }: { data?: any[] }) {
+export default function OurServices({ data }: { data?: ServiceCard[] }) {
   const services = data && data.length > 0 ? data : OUR_SERVICES;
 
   return (
@@ -84,9 +85,10 @@ export default function OurServices({ data }: { data?: any[] }) {
         {/* 3-column service cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => {
-            const imgUrl = service.image?.url 
-              ? getStrapiMedia(service.image.url) 
-              : service.image;
+            const imgUrl =
+              typeof service.image === "string"
+                ? service.image
+                : getStrapiMedia(service.image?.url) ?? undefined;
 
             return (
               <motion.div
