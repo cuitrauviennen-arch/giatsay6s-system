@@ -5,6 +5,7 @@ import { Home, Settings, Leaf, MapPin } from "lucide-react";
 
 export default function FloatingNav() {
   const [activeSection, setActiveSection] = useState("hero");
+  const [overRail, setOverRail] = useState(false);
 
   const navItems = [
     { id: "hero", label: "Trang chủ", icon: <Home size={18} /> },
@@ -33,6 +34,15 @@ export default function FloatingNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navItems]);
 
+  // On phones the nav covers the right edge of the laundry rail, so fade it out while the rail is on screen
+  useEffect(() => {
+    const rail = document.getElementById("gia-treo");
+    if (!rail) return;
+    const observer = new IntersectionObserver(([entry]) => setOverRail(entry.isIntersecting), { threshold: 0.25 });
+    observer.observe(rail);
+    return () => observer.disconnect();
+  }, []);
+
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -41,7 +51,7 @@ export default function FloatingNav() {
   };
 
   return (
-    <div className="fixed right-2 sm:right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 sm:gap-3">
+    <div className={`fixed right-2 sm:right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 sm:gap-3 transition-opacity duration-300 ${overRail ? "max-sm:opacity-0 max-sm:pointer-events-none" : ""}`}>
       {navItems.map((item) => (
         <div key={item.id} className="relative group">
           <button

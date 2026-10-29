@@ -44,6 +44,7 @@ Lưu ý gói Free của Render: backend tự "ngủ" khi không có truy cập, 
 | framer-motion | 12.42.0 |
 | lottie-react | 2.4.1 |
 | lucide-react | 1.22.0 |
+| tw-animate-css (hiệu ứng chữ của giá treo đồ) | 1.4.0 |
 | @next/third-parties (Google Tag Manager) | 16.2.10 |
 | typescript | 5.9.3 |
 | eslint / eslint-config-next | 9.39.4 / 16.4.3 |
@@ -74,6 +75,10 @@ Lưu ý gói Free của Render: backend tự "ngủ" khi không có truy cập, 
 | SEO & Metadata | Single type | `/api/seo` | Thẻ meta, Open Graph, Google Tag Manager |
 
 Quyền đọc công khai của các API trên được cấp tự động khi Strapi khởi động (`backend/src/index.ts`). Thêm loại nội dung mới thì nhớ thêm quyền vào đó.
+
+**Không lấy từ Strapi:**
+- **Giá treo đồ** (`frontend/src/components/sections/laundry-rail.tsx`, nằm giữa phần Dịch vụ và Liên hệ): 6 món đồ, hotline và link được viết thẳng trong file này. Nút vàng gọi 0816.366.176, dòng nhỏ bên dưới gọi 0907.45.22.99. Khi người xem mở một món, component gửi sự kiện `view_service_detail` (kèm `service_id`, `viewport`) vào Google Tag Manager. File `components/ui/product-rail-gallery.tsx` là component gốc của bên thiết kế, không sửa.
+- **Hotline:** ô `hotline` trong Strapi đang để trống, nên thanh trên cùng (`TopBar.tsx`) và phần Liên hệ (`Contact.tsx`) dùng số mặc định trong code. Nhập hotline vào Strapi thì số trong Strapi sẽ được hiện thay.
 
 ---
 
@@ -176,6 +181,7 @@ Lịch sử sao lưu:
   - Chạy `git config core.fileMode false` trong repo để git bỏ qua việc đổi quyền file.
   - Nếu lệnh build báo lỗi kiểu `Cannot find module ...` trong `node_modules`: xoá `node_modules` rồi chạy lại `npm ci`.
 - **npm 11 chặn script cài đặt** của thư viện. `better-sqlite3` đã được cho phép trong `backend/package.json` (`allowScripts`). Thư viện mới cần script thì chạy `npm install-scripts approve <tên>`.
-- **`npm run lint` ở frontend** chạy `eslint` (Next.js 16 đã bỏ lệnh `next lint`). Hiện 0 lỗi, còn 5 cảnh báo: dùng `<img>` thay vì `next/image`, và dependency của `useEffect` trong `FloatingNav`, `Hero`.
+- **`npm run lint` ở frontend** chạy `eslint` (Next.js 16 đã bỏ lệnh `next lint`). Hiện 0 lỗi, còn 7 cảnh báo: dùng `<img>` thay vì `next/image`, dependency của `useEffect` trong `FloatingNav`, `Hero`, và 2 cảnh báo trong component gốc của giá treo (để nguyên).
+- **Thư mục `giatsay6s-handoff/`** (gói bàn giao giá treo đồ, có ảnh mẫu và hướng dẫn) nằm ở gốc dự án nhưng bị bỏ qua trong `.gitignore`, nên chỉ có trên Synology, không có trên GitHub.
 - **npm audit**: frontend 0 lỗ hổng. Backend còn khoảng 35 lỗ hổng (không có mức critical), nằm trong thư viện nội bộ của Strapi; chờ Strapi phát hành bản vá rồi nâng tiếp (`npx @strapi/upgrade minor`).
 - **Neon Free** không hết hạn. **Render Free** không dùng database của Render (Postgres miễn phí của Render tự xoá sau ~30 ngày) — database nằm ở Neon.

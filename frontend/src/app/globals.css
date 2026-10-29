@@ -1,9 +1,37 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+/* 6S brand tokens read by the laundry rail (components/ui/product-rail-gallery). */
+:root {
+  --background: #ffffff;
+  --foreground: #1a3a6b;
+  --card: #ffffff;
+  --card-foreground: #1a3a6b;
+  --primary: #004AAD;
+  --primary-foreground: #ffffff;
+  --accent: #f5c518;
+  --accent-foreground: #1a3a6b;
+  --muted: #e8edf3;
+  --muted-foreground: #4a5565;
+  --border: #dce3ec;
+  --ring: #004AAD;
+}
 
 @theme inline {
-  --color-primary: #004AAD;
+  --color-primary: var(--primary);
   --color-primary-hover: #003380;
   --color-secondary: #FFDE01;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
 }
 
 @layer utilities {

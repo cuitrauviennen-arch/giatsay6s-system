@@ -16,7 +16,7 @@ export default function Contact({ data }: ContactProps) {
   const address = data?.address || "Hẻm 350 (340/23) Nguyễn Văn Lượng, Phường 16, Quận Gò Vấp, TP.HCM";
   
   // Format hotlines, assume comma separated string from DB
-  const rawHotline = data?.hotline || "0907.45.22.99, 0816.366.716";
+  const rawHotline = data?.hotline || "0907.45.22.99, 0816.366.176";
   const hotlines = rawHotline.split(",").map((h) => h.trim());
   
   const facebookUrl = data?.facebookUrl || "https://facebook.com/giatsay6s";

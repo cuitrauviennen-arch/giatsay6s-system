@@ -3,6 +3,7 @@ import Services from "@/components/Services";
 import ContactBar from "@/components/ContactBar";
 import OurServices from "@/components/OurServices";
 import Contact from "@/components/Contact";
+import LaundryRail from "@/components/sections/laundry-rail";
 import { getHeroData, getContactData, getProcessStepsData, getServicesData } from "@/lib/api";
 
 export default async function Home() {
@@ -19,6 +20,9 @@ export default async function Home() {
       <Services data={processStepsData} />
       <ContactBar data={contactData} />
       <OurServices data={servicesData} />
+      <div id="gia-treo">
+        <LaundryRail />
+      </div>
       <Contact data={contactData} />
     </div>
   );

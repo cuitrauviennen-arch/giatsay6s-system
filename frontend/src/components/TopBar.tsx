@@ -5,7 +5,7 @@ export default async function TopBar() {
   const contactData = await getContactData();
   
   const address = contactData?.address || "Hẻm 350 (340/23) Nguyễn Văn Lượng, P.16, Q. Gò Vấp";
-  const hotline = contactData?.hotline || "0816-366716";
+  const hotline = contactData?.hotline || "0816-366176";
   const facebook = contactData?.facebookUrl || "facebook.com/giatsay6s";
 
   return (
