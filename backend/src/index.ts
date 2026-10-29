@@ -17,6 +17,7 @@ export default {
           'api::service.service.findOne',
           'api::process-step.process-step.find',
           'api::process-step.process-step.findOne',
+          'api::seo.seo.find',
         ];
 
         for (const action of permissions) {
